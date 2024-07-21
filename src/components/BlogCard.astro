@@ -4,12 +4,12 @@ const { post } = Astro.props;
 ---
 
 <a href={"b/" + post.slug}>
-  <div class="w-[176px] h-[230px] hover:shadow-md p-3 rounded-xl">
+  <div class="w-[200px] h-[300px] hover:shadow-md p-3 rounded-xl">
     <Image
       class="rounded-xl mb-3 h-[152px] object-none"
       src={post.data.image}
       alt="A bird sitting on a nest of eggs."
-      width={152}
+      width={200}
       height={152}
     />
     <b>{post.data.title}</b>
