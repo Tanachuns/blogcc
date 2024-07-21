@@ -1,4 +1,5 @@
 ---
+import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 
 // interface Props {
@@ -18,8 +19,9 @@ import Navbar from "../components/Navbar.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Tanabythepond.dev | Tanarak's Personal Blog.</title>
   </head>
-  <body>
+  <body class="">
     <Navbar />
   <slot />
+  <Footer/>
   </body>
 </html>
