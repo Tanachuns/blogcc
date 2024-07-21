@@ -1,7 +1,23 @@
 ---
+import BlogCard from "../components/BlogCard.astro";
 import Layout from "../layouts/PageLayout.astro";
+import { getCollection, getEntry } from "astro:content";
+
+// Get all entries from a collection.
+// Requires the name of the collection as an argument.
+// Example: retrieve `src/content/blog/**`
+const blogCollection = await getCollection("blog");
 ---
 
 <Layout>
-  <a href="./b/1">1</a>
+  <h1 class="text-4xl">Blogs</h1>
+  <br>
+  <hr>
+  <div class="grid mx-auto my-2 gap-2 grid-cols-4 ">
+    {
+      blogCollection.map((item: any) => {
+        return <BlogCard post={item} />;
+      })
+    }
+  </div>
 </Layout>

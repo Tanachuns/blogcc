@@ -1,8 +1,7 @@
 ---
-layout: ../../layouts/PostLayout.astro
-title: "Hello, World!"
-author: "Matthew Phillips"
+title: "Hi!"
 date: "09 Aug 2022"
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzSrlFJWC9VrzJsBbVzMIgcDAXzRnCZi6goA&s"
 ---
 
 All frontmatter properties are available as props to an Astro layout component.
