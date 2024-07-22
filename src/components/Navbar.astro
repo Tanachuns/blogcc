@@ -1,16 +1,18 @@
 ---
 import { Image } from "astro:assets";
 import LogoImages from "../images/logo.svg";
+import Modal from "./MenuModal.astro";
 ---
 
 <nav class="px-5 py-3 shadow-sm flex justify-between items-center">
-  <a href="/">
+  <Modal/>
+   <a href="/">
     <div class="flex gap-2">
       <Image src={LogoImages} alt="" width={25} />
       <h1 class="text-3xl">TanaByThePond.</h1>
     </div>
-  </a>
-  <div class="flex gap-4">
+  </Modal>
+  <div class="hidden gap-4 sm:flex">
     <a class="hover:underline" href="/blogs">Blogs</a>
     <a class="hover:underline" href="/categories">Categories</a>
     <a class="hover:underline" href="/archive">Archive</a>
