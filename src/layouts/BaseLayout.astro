@@ -2,11 +2,11 @@
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 
-const desc =
+const { title, desc } = Astro.props;
+
+const _desc =
+  desc ||
   "Explore a programming, development, cooking, lifestyle, IT, and coding. Join us for insightful articles, tutorials, and tips on balancing tech and life.";
-
-
-const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,8 +17,8 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <meta name="description" content="E" />
-    <meta name="keywords" content={desc} />
+    <meta name="description" content={_desc} />
+    <meta name="keywords" content={_desc} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={desc} />
     <meta property="og:type" content="article" />

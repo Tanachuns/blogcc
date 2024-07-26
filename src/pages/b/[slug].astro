@@ -15,7 +15,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title={`Tanarak's DigitalPond. | ${entry.data.title}`}>
+<Layout title={`Tanarak's DigitalPond. | ${entry.data.title}`} desc={entry.data.desc}>
   <Image
     class="bg-black w-full"
     src={entry.data.headerImg}
