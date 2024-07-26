@@ -3,6 +3,7 @@ import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 
 const { title, desc } = Astro.props;
+
 const _desc =
   desc ||
   "Explore a programming, development, cooking, lifestyle, IT, and coding. Join us for insightful articles, tutorials, and tips on balancing tech and life.";
@@ -28,6 +29,7 @@ const _desc =
     <meta property="og:image" content="/header.png" />
     <meta property="og:image:secure_url" content="/header.png" />
     <!-- x -->
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={desc} />
     <meta name="twitter:url" content="https://blog.tanabythepond.dev" />
