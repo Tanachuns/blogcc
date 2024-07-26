@@ -3,17 +3,17 @@ import { Image } from "astro:assets";
 const { post } = Astro.props;
 ---
 
-<div class="w-full md:h-[29%] p-3 border flex">
-  <div class="w-[71%] hidden md:block">
+<div class="w-full md:h-[300px] p-3 border flex">
+  <div class="w-1/3 hidden md:block">
     <a href={"b/" + post.slug}>
       {
-        post.data.image && (
+        post.data.cardImg && (
           <Image
             class="h-full object-contai border"
-            src={post.data.image}
+            src={post.data.cardImg}
             alt="A bird sitting on a nest of eggs."
-            width={500}
-            height={200}
+            width={300}
+            height={100}
           />
         )
       }
