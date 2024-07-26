@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import MarkdownPostLayout from "../../layouts/PageLayout.astro";
+import Layout from "../../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
@@ -15,7 +15,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<MarkdownPostLayout frontmatter={entry.data}>
+<Layout title={`Tanarak's DigitalPond. | ${entry.data.title}`}>
   <Image
     class="bg-black w-full"
     src={entry.data.headerImg}
@@ -46,4 +46,4 @@ const { Content } = await entry.render();
     <hr class="!m-5" />
     <Content />
   </div>
-</MarkdownPostLayout>
+</Layout>

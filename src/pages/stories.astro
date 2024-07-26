@@ -1,6 +1,6 @@
 ---
 import BlogCard from "../components/BlogCard.astro";
-import Layout from "../layouts/PageLayout.astro";
+import Layout from "../layouts/BaseLayout.astro";
 import { getCollection, getEntry } from "astro:content";
 
 // Get all entries from a collection.
@@ -9,11 +9,11 @@ import { getCollection, getEntry } from "astro:content";
 const blogCollection = await getCollection("blog");
 ---
 
-<Layout>
+<Layout title="Tanarak's DigitalPond. | Stories">
   <h1 class="text-4xl">Stories</h1>
-  <br>
-  <hr>
-  <div class="flex flex-col gap-y-3 pt-2" >
+  <br />
+  <hr />
+  <div class="flex flex-col gap-y-3 pt-2">
     {
       blogCollection.map((item: any) => {
         return <BlogCard post={item} />;
