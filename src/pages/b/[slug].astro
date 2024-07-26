@@ -25,10 +25,20 @@ const { Content } = await entry.render();
   />
   <div class="prose mt-5 !max-w-full">
     <h1 class="!mb-1">{entry.data.title}</h1>
-      <small class="text-gray-400"
-        >{entry.data.author} | {entry.data.date}</small
-      >
+    <small class="text-gray-400">{entry.data.author} | {entry.data.date}</small>
+    <!-- AddToAny BEGIN -->
+    <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_mastodon"></a>
+      <a class="a2a_button_linkedin"></a>
+      <a class="a2a_button_threads"></a>
+      <a class="a2a_button_sms"></a>
+      <a class="a2a_button_copy_link"></a>
+      <a class="a2a_button_x"></a>
+    </div>
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+    <!-- AddToAny END -->
     <hr class="!m-5" />
-      <Content />
+    <Content />
   </div>
 </MarkdownPostLayout>
