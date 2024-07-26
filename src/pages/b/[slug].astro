@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import MarkdownPostLayout from "../../layouts/PageLayout.astro";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
@@ -15,5 +16,19 @@ const { Content } = await entry.render();
 ---
 
 <MarkdownPostLayout frontmatter={entry.data}>
-  <Content />
+  <Image
+    class="bg-black w-full"
+    src={entry.data.image}
+    alt="A bird sitting on a nest of eggs."
+    width={1000}
+    height={400}
+  />
+  <div class="prose mt-5 !max-w-full">
+    <h1 class="!mb-1">{entry.data.title}</h1>
+      <small class="text-gray-400"
+        >{entry.data.author} | {entry.data.date}</small
+      >
+    <hr class="!m-5" />
+      <Content />
+  </div>
 </MarkdownPostLayout>
