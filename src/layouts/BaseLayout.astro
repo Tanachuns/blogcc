@@ -7,19 +7,59 @@ const { title, desc } = Astro.props;
 const _desc =
   desc ||
   "สวัสดีชาวเน็ต, ผม ต้น เป็น Software Developer หน้าใหม่แต่ไฟมอดไปแล้ว ที่ชื่นชอบ การทำอาหาร, สร้างนู่นนี่ และ ศึกษาอะไรไปเรื่อย";
+
+const keywords = `Software Developer หน้าใหม่
+การทำอาหาร
+สร้างนู่นนี่
+ประสบการณ์ใหม่
+การเรียนรู้
+บันทึกความทรงจำ
+งาน dev
+design system
+UX/UI
+Lifestyle
+ปลูกผักกินเอง
+เตรียมปลา Fillet
+การถนอมอาหาร
+ทำไส้กรอก
+แตงกวาดองกิมจิ
+ซอสซีอิ๊วขาว
+น้ำปลา
+เลี้ยงไก่ไข่
+วางแผนการกิน
+การบริการเงิน
+การลงทุน
+รับผิดชอบชีวิตตัวเอง
+TikTok @tanachuns
+หนังสือเก่า
+เดล คาร์เนกี
+วอลเดน เดวิด ทอโร
+หลุนอวี๋ ขงจื่อ
+การค้นหาตัวเอง
+มุมมองโลก
+Renaissance Man
+สวนดิจิทัล
+บึงดิจิตอล
+วงแหวนเว็บ
+เขียนบล็อก
+บันทึกวีรกรรม
+สัปดาห์ละหนึ่งครั้ง`;
 ---
 
 <!doctype html>
 <html lang="th">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <!-- Standard SEO meta tags -->
     <title>{title}</title>
-    <meta name="description" content={_desc} />
-    <meta name="keywords" content={_desc} />
-    <!-- fcebook -->
+    <meta name="description" content={desc} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Tanarak Chunsanit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Open Graph meta tags for Facebook and other social platforms -->
     <meta property="og:type" content="article" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={_desc} />
@@ -28,16 +68,21 @@ const _desc =
     <meta property="article:section" content="Lifestyle" />
     <meta property="og:image" content="/header.png" />
     <meta property="og:image:secure_url" content="/header.png" />
-    <!-- x -->
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={_desc} />
     <meta name="twitter:url" content="https://blog.tanabythepond.dev" />
-    <meta name="twitter:creator" content="@tanachuns" />
-    <meta
-      name="twitter:image"
-      content="https://blog.tanabythepond.dev/header.png"
-    />
+    <meta name="twitter:site" content="@Tanabythepond" />
+    <meta name="twitter:image" content="/header.png" />
     <meta name="twitter:image:alt" content="Header Image" />
+
+    <!-- Canonical link for SEO -->
+    <link rel="canonical" href="https://blog.tanabythepond.dev" />
+
+    <!-- Favicon for browser tabs -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   </head>
 
   <body>
