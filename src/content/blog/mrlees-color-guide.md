@@ -3,7 +3,7 @@ title: "วิธีการเลือกใช้สีสำหรับเ
 date: "2 Aug 2024"
 headerImg: "./images/mrlees-color-guide/header.png"
 cardImg: "./images/mrlees-color-guide/header.png"
-desc: ""
+desc: "วันนึงนั่งไถไอจีไปเจอช่องนึงชื่อว่า [uxui_howard.le](https://www.instagram.com/uxui_howard.le) เป็นคลิปเกี่ยวกับการเลือกใช้สี โดยคุณลี ใช้ Chart ในการ Visualized การเลือกสีให้ออกมาได้เข้าใจง่าย โดยวันนี้เราจะมาลองทำตาม Mr.Lee's Color Guide กัน"
 author: "Tana"
 tags: ["Design"]
 ---
