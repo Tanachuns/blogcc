@@ -2,7 +2,7 @@
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 
-const { title, desc } = Astro.props;
+const { title, desc, img } = Astro.props;
 
 const _desc = desc || "สวัสดีชาวเน็ต, ผม ต้น เป็น Software Developer ";
 
@@ -80,7 +80,7 @@ Renaissance Man,
       data-rh="true"
     />
     <meta name="twitter:site" content="@Tanabythepond" data-rh="true" />
-    <meta name="twitter:image" content="/header.png" data-rh="true" />
+    <meta name="twitter:image:src" content={img} data-rh="true" />
     <meta name="twitter:image:alt" content="Header Image" data-rh="true" />
 
     <!-- Canonical link for SEO -->
