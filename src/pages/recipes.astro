@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/BaseLayout.astro";
+
+const recipeCollection = await getCollection("recipe");
+---
+
+<Layout title="Tanarak's DigitalPond. | Tags">
+  <h1 class="text-4xl">Recipes</h1>
+  <br />
+  <hr />
+  <ul class="list-disc mt-5 underline">
+    {
+      recipeCollection.map((item: any) => {
+        return (
+          <li>
+            <a href={"r/" + item.slug}>{item.data.title}</a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</Layout>
