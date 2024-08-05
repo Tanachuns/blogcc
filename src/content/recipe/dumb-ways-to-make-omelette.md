@@ -30,7 +30,7 @@ author: "Tanarak C."
 
 Enjoy ครับ 😉
 
-สามารถดูแบบ video ได้ที่: [Dumb ways to be full - Omelette](https://www.instagram.com/reel/C-RJsmgoMWZ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==)
+สามารถดูแบบ video ได้ที่: [Dumb ways to be full - Omelette](https://www.instagram.com/reel/C-RJsmgoMWZ)
 
 ถ้าชอบฝากกดติดตามด้วยนะครับ
 
