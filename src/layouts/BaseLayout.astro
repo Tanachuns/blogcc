@@ -67,8 +67,14 @@ Renaissance Man,
     <meta property="og:url" content="https://blog.tanabythepond.dev" />
     <meta property="og:site_name" content="Tanabythepond" />
     <meta property="article:section" content="Lifestyle" />
-    <meta property="og:image" content={img} />
-    <meta property="og:image:secure_url" content={img} />
+    <meta
+      property="og:image"
+      content={img ? img.src : "https:blog.tanabythepond.dev/header.png"}
+    />
+    <meta
+      property="og:image:secure_url"
+      content={img ? img.src : "https:blog.tanabythepond.dev/header.png"}
+    />
 
     <!-- Twitter Card meta tags -->
     <meta name="twitter:card" content="summary" data-rh="true" />
@@ -82,7 +88,7 @@ Renaissance Man,
     <meta name="twitter:site" content="@Tanabythepond" data-rh="true" />
     <meta
       name="twitter:image:src"
-      content="https://blog.tanabythepond.dev/header.png"
+      content={img ? img.src : "https:blog.tanabythepond.dev/header.png"}
       data-rh="true"
     />
     <meta name="twitter:image:alt" content="Header Image" data-rh="true" />
