@@ -2,7 +2,7 @@
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 
-const { title, desc } = Astro.props;
+const { title, desc, img } = Astro.props;
 
 const _desc = desc || "สวัสดีชาวเน็ต, ผม ต้น เป็น Software Developer ";
 
@@ -67,8 +67,8 @@ Renaissance Man,
     <meta property="og:url" content="https://blog.tanabythepond.dev" />
     <meta property="og:site_name" content="Tanabythepond" />
     <meta property="article:section" content="Lifestyle" />
-    <meta property="og:image" content="/header.png" />
-    <meta property="og:image:secure_url" content="/header.png" />
+    <meta property="og:image" content={img} />
+    <meta property="og:image:secure_url" content={img} />
 
     <!-- Twitter Card meta tags -->
     <meta name="twitter:card" content="summary" data-rh="true" />
