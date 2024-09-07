@@ -15,9 +15,13 @@ const blogCollection = await getCollection("blog");
   <hr />
   <div class="flex flex-col gap-y-3 pt-2">
     {
-      blogCollection.map((item: any) => {
-        return <BlogCard post={item} />;
-      })
+      blogCollection
+        .filter((item) => {
+          return !item.data.isDraft;
+        })
+        .map((item: any) => {
+          return <BlogCard post={item} />;
+        })
     }
   </div>
 </Layout>

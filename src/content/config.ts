@@ -13,6 +13,7 @@ const blogCollection = defineCollection({
       cardImg: image(),
       author: z.string(),
       tags: z.array(z.string()),
+      isDraft: z.boolean(),
     }),
 });
 

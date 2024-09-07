@@ -6,6 +6,7 @@ cardImg: "./images/mrlees-color-guide/header.png"
 desc: "วันนึงนั่งไถไอจีไปเจอช่องนึงชื่อว่า uxui_howard.le เป็นคลิปเกี่ยวกับการเลือกใช้สี โดยคุณลี ใช้ Chart ในการ Visualized การเลือกสีให้ออกมาได้เข้าใจง่าย โดยวันนี้เราจะมาลองทำตาม Mr.Lee's Color Guide กัน"
 author: "Tanarak C."
 tags: ["Design"]
+isDraft: false
 ---
 
 เนื่องจากช่วงนี้งานประจำที่ทำได้รับมอบหมายให้ขึ้นโปรเจคใหม่ทั้งหมด ทั้ง Frontend และ Backend
