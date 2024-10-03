@@ -1,0 +1,101 @@
+---
+import Layout from "../layouts/BaseLayout.astro";
+---
+
+<Layout title="Tanarak's DigitalPond. | Stories">
+  <h1 class="text-4xl">PoBrosdoro</h1>
+  <br />
+  <hr />
+  <div class="flex flex-col gap-y-3 pt-2">
+    <img
+      id="image"
+      src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3o5OHRnc2J3aDR2dmtjbG1kcnVsazhwdGJxY2NjZTBlMDRtbHpsbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Jcq1akTynYlDG/giphy.webp"
+      alt="Bros're wokring!!!!"
+      height="500"
+      style="margin: 0 auto;"
+    />
+    <!-- <img
+      src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3o5OHRnc2J3aDR2dmtjbG1kcnVsazhwdGJxY2NjZTBlMDRtbHpsbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Jcq1akTynYlDG/giphy.webp"
+      alt="Bro's resting."
+      width="500"
+      style="margin: 0 auto;"
+    />
+    <img
+      src="https://content.imageresizer.com/images/memes/Frozen-Guy-meme-4.jpg"
+      alt="Bro's freezing."
+      width="500"
+      style="margin: 0 auto;"
+    /> -->
+    <h2 id="time" class="text-3xl m-auto">Time</h2>
+    <h2 id="state" class="font-bold text-xl m-auto text-cente">Idle</h2>
+    <button id="startBtn">Start</button>
+    <button id="stopBtn">Pause</button>
+    <button id="resetBtn">Stop</button>
+  </div>
+
+  <script>
+    const BaseWorkingTime = 75000;
+    const BaseRestingTime = 75000;
+
+    const timeDisplay = document.getElementById("time");
+    const state = document.getElementById("state");
+    const image = document.getElementById("image") as HTMLImageElement;
+
+    let seconds = BaseWorkingTime;
+    let interval: number = 0;
+    timeDisplay.innerText =
+      seconds.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " seconds";
+
+    document.getElementById("startBtn").onclick = function () {
+      if (state.innerText === "Idle" || state.innerText === "Working") {
+        state.innerText = "Working";
+        image.src =
+          "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExanNwNHRlZjJtM28zZDNyaWhoamVoMW0wbzRicXE0bTIyNmlmdHJicCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kUNuMR2htAPA0PGlDP/giphy.webp";
+        image.alt = "Bros're Resting!!!!";
+      }
+      if (!interval) {
+        interval = setInterval(() => {
+          seconds--;
+          timeDisplay.innerText = seconds
+            .toString()
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          +" seconds";
+          if (seconds == 0 && state.innerText == "Working") {
+            seconds = BaseRestingTime;
+            state.innerText = "Resting";
+            image.src =
+              "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3o5OHRnc2J3aDR2dmtjbG1kcnVsazhwdGJxY2NjZTBlMDRtbHpsbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Jcq1akTynYlDG/giphy.webp";
+            image.alt = "Bros're Resting!!!!";
+          } else if (seconds == 0 && state.innerText == "Resting") {
+            seconds = BaseWorkingTime;
+            image.src =
+              "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExanNwNHRlZjJtM28zZDNyaWhoamVoMW0wbzRicXE0bTIyNmlmdHJicCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kUNuMR2htAPA0PGlDP/giphy.webp";
+            image.alt = "Bros're wokring!!!!";
+            state.innerText = "Working";
+          }
+        }, 1000);
+      }
+    };
+    document.getElementById("stopBtn").onclick = function () {
+      clearInterval(interval);
+      interval = null;
+      image.src =
+        "https://content.imageresizer.com/images/memes/Frozen-Guy-meme-4.jpg";
+      image.alt = "Bro's freezing.";
+    };
+
+    document.getElementById("resetBtn").onclick = function () {
+      clearInterval(interval);
+      interval = null;
+      seconds = BaseWorkingTime;
+      state.innerText = "Idle";
+      timeDisplay.innerText = seconds
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      +" seconds";
+      image.src =
+        "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3o5OHRnc2J3aDR2dmtjbG1kcnVsazhwdGJxY2NjZTBlMDRtbHpsbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Jcq1akTynYlDG/giphy.webp";
+      image.alt = "Bros're Resting!!!!";
+    };
+  </script>
+</Layout>
