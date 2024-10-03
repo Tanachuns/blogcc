@@ -37,16 +37,20 @@ import Layout from "../layouts/BaseLayout.astro";
     const BaseWorkingTime = 75000;
     const BaseRestingTime = 75000;
 
-    const timeDisplay = document.getElementById("time");
-    const state = document.getElementById("state");
+    const timeDisplay = document.getElementById("time") as HTMLElement;
+    const state = document.getElementById("state") as HTMLElement;
     const image = document.getElementById("image") as HTMLImageElement;
+
+    const startBtn = document.getElementById("startBtn") as HTMLButtonElement;
+    const stopBtn = document.getElementById("stopBtn") as HTMLButtonElement;
+    const resetBtn = document.getElementById("resetBtn") as HTMLButtonElement;
 
     let seconds = BaseWorkingTime;
     let interval: number = 0;
     timeDisplay.innerText =
       seconds.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " seconds";
 
-    document.getElementById("startBtn").onclick = function () {
+    startBtn.onclick = function () {
       if (state.innerText === "Idle" || state.innerText === "Working") {
         state.innerText = "Working";
         image.src =
@@ -76,17 +80,17 @@ import Layout from "../layouts/BaseLayout.astro";
         }, 1000);
       }
     };
-    document.getElementById("stopBtn").onclick = function () {
+    stopBtn.onclick = function () {
       clearInterval(interval);
-      interval = null;
+      interval = 0;
       image.src =
         "https://content.imageresizer.com/images/memes/Frozen-Guy-meme-4.jpg";
       image.alt = "Bro's freezing.";
     };
 
-    document.getElementById("resetBtn").onclick = function () {
+    resetBtn.onclick = function () {
       clearInterval(interval);
-      interval = null;
+      interval = 0;
       seconds = BaseWorkingTime;
       state.innerText = "Idle";
       timeDisplay.innerText = seconds
