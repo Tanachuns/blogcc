@@ -92,10 +92,8 @@ import Layout from "../layouts/BaseLayout.astro";
       interval = 0;
       seconds = BaseWorkingTime;
       state.innerText = "Idle";
-      timeDisplay.innerText = seconds
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      +" seconds";
+      timeDisplay.innerText =
+        seconds.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " seconds";
       image.src =
         "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3o5OHRnc2J3aDR2dmtjbG1kcnVsazhwdGJxY2NjZTBlMDRtbHpsbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Jcq1akTynYlDG/giphy.webp";
       image.alt = "Bros're Resting!!!!";
