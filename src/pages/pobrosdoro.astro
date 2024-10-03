@@ -60,10 +60,9 @@ import Layout from "../layouts/BaseLayout.astro";
       if (!interval) {
         interval = setInterval(() => {
           seconds--;
-          timeDisplay.innerText = seconds
-            .toString()
-            .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-          +" seconds";
+          timeDisplay.innerText =
+            seconds.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") +
+            " seconds";
           if (seconds == 0 && state.innerText == "Working") {
             seconds = BaseRestingTime;
             state.innerText = "Resting";
