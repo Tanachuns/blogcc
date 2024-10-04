@@ -27,6 +27,7 @@ import Layout from "../layouts/BaseLayout.astro";
       style="margin: 0 auto;"
     /> -->
     <h2 id="time" class="text-3xl m-auto">Time</h2>
+    <h4 id="loops" class="text-xl m-auto">0 Loops🔥</h4>
     <h2 id="state" class="font-bold text-xl m-auto text-cente">Idle</h2>
     <button id="startBtn">Start</button>
     <button id="stopBtn">Pause</button>
@@ -36,10 +37,12 @@ import Layout from "../layouts/BaseLayout.astro";
   <script>
     const BaseWorkingTime = 75000;
     const BaseRestingTime = 1500;
+    let BaseLoops = 0;
 
     const timeDisplay = document.getElementById("time") as HTMLElement;
     const state = document.getElementById("state") as HTMLElement;
     const image = document.getElementById("image") as HTMLImageElement;
+    const loops = document.getElementById("loops") as HTMLImageElement;
 
     const startBtn = document.getElementById("startBtn") as HTMLButtonElement;
     const stopBtn = document.getElementById("stopBtn") as HTMLButtonElement;
@@ -71,6 +74,8 @@ import Layout from "../layouts/BaseLayout.astro";
             image.alt = "Bros're Resting!!!!";
             alert("Bruh, chill and catch some Z's!");
           } else if (seconds == 0 && state.innerText == "Resting") {
+            BaseLoops += 1;
+            loops.innerText = BaseLoops + " Loops🔥";
             seconds = BaseWorkingTime;
             image.src =
               "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExanNwNHRlZjJtM28zZDNyaWhoamVoMW0wbzRicXE0bTIyNmlmdHJicCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kUNuMR2htAPA0PGlDP/giphy.webp";
