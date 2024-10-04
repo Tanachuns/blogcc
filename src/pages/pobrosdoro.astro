@@ -35,7 +35,7 @@ import Layout from "../layouts/BaseLayout.astro";
 
   <script>
     const BaseWorkingTime = 75000;
-    const BaseRestingTime = 75000;
+    const BaseRestingTime = 1500;
 
     const timeDisplay = document.getElementById("time") as HTMLElement;
     const state = document.getElementById("state") as HTMLElement;
@@ -69,12 +69,14 @@ import Layout from "../layouts/BaseLayout.astro";
             image.src =
               "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3o5OHRnc2J3aDR2dmtjbG1kcnVsazhwdGJxY2NjZTBlMDRtbHpsbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Jcq1akTynYlDG/giphy.webp";
             image.alt = "Bros're Resting!!!!";
+            alert("Bruh, chill and catch some Z's!");
           } else if (seconds == 0 && state.innerText == "Resting") {
             seconds = BaseWorkingTime;
             image.src =
               "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExanNwNHRlZjJtM28zZDNyaWhoamVoMW0wbzRicXE0bTIyNmlmdHJicCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kUNuMR2htAPA0PGlDP/giphy.webp";
             image.alt = "Bros're wokring!!!!";
             state.innerText = "Working";
+            alert("Nah fam, time to grind!");
           }
         }, 1000);
       }
