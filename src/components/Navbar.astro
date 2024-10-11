@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import LogoImages from "../images/logo.svg";
+import LogoImages from "../images/logo.png";
 import Modal from "./MenuModal.astro";
 ---
 
@@ -9,7 +9,7 @@ import Modal from "./MenuModal.astro";
   <div class="flex">
     <a href="/" class="">
       <div class="flex gap-2">
-        <!-- <Image src={LogoImages} alt="Logo" width={25} /> -->
+        <Image src={LogoImages} alt="Logo" width={45} />
         <h2 class="text-xl md:text-3xl">TanaByThePond.</h2>
         <small class="hidden md:block"> 1 Weeks Streak🔥</small>
       </div>
